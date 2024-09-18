@@ -2,20 +2,19 @@ h1 {
     text-align: center;
     color: darkslateblue;
 }
-.wrapper {
+
+#wrapper {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
     grid-gap: 5px;
     grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 25% 75%;
 }
 .one {
     grid-column: 1;
-    grid-row: 1;
     background-color: midnightblue;
     color: aliceblue;
 }
 .two {
-    grid-column: 2 / 9;
-    grid-row: 1;
+    grid-column: 2;
     background-color: grey;
 }
