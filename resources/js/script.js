@@ -1,16 +1,19 @@
 const htmlCodeLigne = `
-	<div class="one">classement (ex: A, B, C)</div>
-	<div class="two">Image à placer</div>`
+    <div class="ligne">
+    	<div class="one"><img class="boutonMoins" src="resources/img/boutonMoins.png" alt="retirer ligne" onclick="removeLine(this)"></div>
+        <div class="two">classement (ex: A, B, C)</div>
+        <div class="three">Image à placer</div>
+    </div>`
 
-let boutonPlus
 let conteneurLignes
+let boutonPlus
 
 window.onload = () => {
-    boutonPlus = document.getElementById("boutonPlus")
     conteneurLignes = document.getElementById("wrapper")
-
+    boutonPlus = document.getElementById("boutonPlus")
+    
     boutonPlus.addEventListener('click', addLine)
-
+    
     addLine()
     addLine()
     addLine()
@@ -18,4 +21,8 @@ window.onload = () => {
 
 function addLine() {
     conteneurLignes.insertAdjacentHTML('afterbegin', htmlCodeLigne)
+}
+
+function removeLine(bouton) {
+    bouton.parentNode.parentNode.remove()
 }
